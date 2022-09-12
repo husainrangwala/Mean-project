@@ -1,0 +1,15 @@
+<div class="centered">
+    <div class="login-box">
+        <h2>Login</h2>
+        <div class="container">
+            <input #emailInput type="text" placeholder="Enter Username" name="uname" required>
+            <input #passwordInput type="password" placeholder="Enter Password" name="psw" required>
+            <div class="login-button">
+                <button type="submit" (click)="onLoginButtonClick(emailInput.value, passwordInput.value)">Login</button>
+            </div> 
+            <br>
+            <br>
+            <a routerLink = "/signup">Sign up</a> 
+        </div>
+    </div>
+</div>

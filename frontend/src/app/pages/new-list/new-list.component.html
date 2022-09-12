@@ -1,0 +1,16 @@
+<div class="centered">
+    <div class="modal-box">
+        <h1 class="title">
+            Create New List
+        </h1>
+
+        <div class="input-group mb-3" id="add">
+            <input #listTitleInput type="text" class="form-control" placeholder="Add List">
+            <div class="input-group-append">
+                <button class="btn" type="button" (click)="createList(listTitleInput.value)">Create</button>
+            </div>
+        </div>    
+        <button routerLink="/" class="btn back">Go back</button>
+    </div>
+
+</div>

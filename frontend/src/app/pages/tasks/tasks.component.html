@@ -1,0 +1,36 @@
+<div class="centered">
+    <div class="task-container">
+        <div class="sidebar">
+            <h1 class="title">
+                Lists
+            </h1>
+
+            <div class="list-menu">
+                <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
+                    <p>{{ list.title }}</p>
+                </a>
+            </div>
+            <button class="is-primary" routerLink="/new-list">+ New List</button>
+        </div>
+        <div class="lists-container">
+            <div *ngIf="tasks">
+                <h1 class="title">
+                    Tasks
+                </h1>
+                
+                <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{'completed': task.completed}">
+                    <p>{{ task.title }}</p>
+                </div>
+                <h3 class = "empty-text" *ngIf="tasks.length === 0">Please click add button to add a task</h3>
+                <button routerLink="./new-task" class="add-button">+</button>
+            </div>
+
+            <div *ngIf="!tasks">
+                <h3 class="title">
+                    Please Select a list
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</div>
